@@ -21,6 +21,12 @@ html, body {
     height: 56px;
     position: absolute;
     bottom: 0;
+    
+    width: 100%;""
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 8px #888;
 }
 
 .style-item {
