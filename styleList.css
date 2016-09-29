@@ -10,6 +10,10 @@ html, body {
     overflow: hidden;
 }
 
+html {
+	background-color: #fdfdfd;
+}
+
 #parent-container, #styles {
     height: 100%;
 }
@@ -48,6 +52,9 @@ html, body {
 .style-item span {
     font-size: 1.3em;
     flex: 1;
+	
+	color: #000;
+	opacity: 0.87;
 }
 
 #heading-number-container {
@@ -62,6 +69,35 @@ html, body {
 	vertical-align: middle;
 }
 
+#snackbar {
+	z-index:8;
+	position: absolute;
+	bottom: 68px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	
+	height: 48px;
+	width: 288px;
+	border-radius: 2px;
+	
+	background-color: #323232;
+	color: white;
+	font-size: 14px;
+	
+	-webkit-transition: height 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition: height 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+#snackbar > div {
+	padding: 14px 24px;
+}
+
+#snackbar.snackbar-hidden {
+	height: 0;
+	overflow: hidden;
+}
+
 h1 {
     font-size: 1.5em;
     padding: 0.2em 1px;
@@ -72,7 +108,8 @@ h1 {
 }
 
 h1 span {
-    color: #888; 
+    color: #000; 
+	opacity: 0.87;
 }
 
 .clickable {
@@ -82,3 +119,93 @@ h1 span {
 .hidden {
 	display:none !important;
 }
+
+.material-icons {
+	opacity: 0.6;
+	cursor: pointer;
+}
+
+.material-icons.inactive {
+	opacity: 0.26;
+	cursor:default;
+}
+
+
+
+
+
+#loader-container {
+	position: absolute;
+	width: 100%;
+}
+
+.progress {
+    position: relative;
+    height: 3px;
+    display: block;
+    width: 100%;
+    background-color: lightblue;
+    border-radius: 2px;
+    margin: 0 0 0.2rem 0;
+    overflow: hidden;
+}
+.progress .indeterminate {
+    background-color: blue;
+}
+
+.progress .indeterminate:before {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    will-change: left, right;
+    -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+    animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+
+.progress .indeterminate:after {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    will-change: left, right;
+    -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    -webkit-animation-delay: 1.15s;
+    animation-delay: 1.15s;
+}
+
+@keyframes indeterminate {
+	0% {
+		left:-35%;
+		right:100%;
+	}
+	60% {
+		left:100%;
+		right:-90%;
+	}
+	100% {
+		left: 100%;
+		right:-90%;
+	}
+}
+
+@keyframes indeterminate-short {
+	0% {
+		left:-200%;
+		right:100%;
+	}
+	60% {
+		left:107%;
+		right:-8%;
+	}
+	100% {
+		left: 107%;
+		right:-8%;
+	}
+}
+

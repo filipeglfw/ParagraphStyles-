@@ -13,7 +13,7 @@
 
 }
 
-.spinner #spinner {
+.spinner #spinnerCustom {
 	stroke:lightblue;
 	stroke-width:3px;
 	-webkit-transform-origin:50%;

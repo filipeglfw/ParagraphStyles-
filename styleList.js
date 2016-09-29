@@ -21,35 +21,39 @@ function fillUserStyles() {
 }
 
 function refreshHeadings() {
-	alert('Headings refreshed!');
+	showProgress();
+	setTimeout(function() {
+		acknowledge("Headings' styles refreshed");
+		hideProgress();
+	},2000)
 }
 
 function applyStyle() {
-	alert("Style applied");
+	acknowledge("Style applied");
 }
 
 function editStyle() {
-	alert("Redirect to edit screen");
+	acknowledge("Redirect to edit screen");
 }
 
 function deleteStyle() {
-	alert("Style deleted");
+	acknowledge("Style deleted");
 }
 
 function newCustomStyle() {
-	alert("Redirect to new style screen")
+	acknowledge("Redirect to new style screen")
 }
 
 function changeHeadingNumberFormat() {
-	alert("Heading number changed");
+	acknowledge("Heading number changed");
 }
 
 function makeDefault() {
-	alert("This subset is now your default");
+	acknowledge("This subset is now your default");
 }
 
 function restoreDefault() {
-	alert("Default styles restored");
+	acknowledge("Default styles restored");
 }
 
 function fillUserStylesAndPreferences() {
@@ -77,17 +81,42 @@ function fillCustomStyles(customStyles) {
 			<div class="style-item"> \
 				<span>' + styleName + '</span> \
 				<div class="style-actions"> \
-					<i class="material-icons clickable apply-style">format_paint</i>\
-					<i class="material-icons clickable edit-style">edit</i>\
-					<i class="material-icons clickable delete-style">delete</i>\
+					<i class="material-icons apply-style">format_paint</i>\
+					<i class="material-icons edit-style">edit</i>\
+					<i class="material-icons delete-style">delete</i>\
 				</div>\
 			</div>';
 		customStylesHTML += customStyleElement; 
 	})
+	hideCustomSpinner();
 	document.querySelector("#custom-container .style-items").innerHTML = customStylesHTML;
 }
 
+function hideCustomSpinner() {
+	let spinner = document.querySelector('#custom-spinner-container');
+	spinner.className += " hidden";
+}
 
+function acknowledge(message) {
+	var snackbarMessage = document.querySelector('#snackbar-message');
+	snackbarMessage.textContent = message;
+	var snackbar = document.querySelector('#snackbar');
+	snackbar.className = snackbar.className.replace("snackbar-hidden","")
+	setTimeout(function() {
+		snackbarMessage.textContent = "";
+		snackbar.className += " snackbar-hidden";
+	}, 2000)
+}
+
+function showProgress() {
+	var loader = document.querySelector('#loader-container');
+	loader.className = loader.className.replace("hidden","")
+}
+
+function hideProgress() {
+	var loader = document.querySelector('#loader-container');
+	loader.className += " hidden";
+}
 
 
 
