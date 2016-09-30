@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<head>
+    <title>Paragraph Styes+</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons.css">
+    
+    <!-- mudar quando subir-->
+    <link rel="stylesheet" href="styleEditor.css">
+    
+</head>
+<body>
+    <div id="parent-container">
+        <div id="editor-style-name">
+            <input type="text" placeholder="Style Name...">
+        </div>
+        <div id="editor-container">
+            
+            <!--Estilos de Texto-->
+            <div class="editor-section">
+                <h2><span>Text style</span><i class="material-icons more">expand_more</i></h2>
+                <div class="section-options">
+                    <div id="font-family">
+                        <label for="ffamily">Font family</label>
+                        <select name="ffamily" id='ffamily' class='disabler'>
+                            <option value='Anton'>Anton</option>
+                            <option value='Arial'>Arial</option>
+                            <option value='Cabin'>Cabin</option>
+                            <option value='Cabin Condensed'>Cabin Condensed</option>
+                            <option value='Calibri'>Calibri</option>
+                            <option value='Cambria'>Cambria</option>
+                            <option value='Comic Sans MS'>Comic Sans MS</option>
+                            <option value='Consolas'>Consolas</option>
+                            <option value='Corsiva'>Corsiva</option>
+                            <option value='Courier New'>Courier New</option>
+                            <option value='Cuprum'>Cuprum</option>
+                            <option value='Chewy'>Chewy</option>
+                            <option value='Didact Gothic'>Didact Gothic</option>
+                            <option value='Droid Sans'>Droid Sans</option>
+                            <option value='Droid Serif'>Droid Serif</option>
+                            <option value='Georgia'>Georgia</option>
+                            <option value='Hammersmith One'>Hammersmith One</option>
+                            <option value='Handlee'>Handlee</option>
+                            <option value='Impact'>Impact</option>
+                            <option value='Inconsolata'>Inconsolata</option>
+                            <option value='Lato'>Lato</option>
+                            <option value='Lora'>Lora</option>
+                            <option value='Montserrat'>Montserrat</option>
+                            <option value='Open Sans'>Open Sans</option>
+                            <option value='Orbitron'>Orbitron</option>
+                            <option value='Oswald'>Oswald</option>
+                            <option value='Playfair Display'>Playfair Display</option>
+                            <option value='PT Sans'>PT Sans</option>
+                            <option value='Questrial'>Questrial</option>
+                            <option value='Raleway'>Raleway</option>
+                            <option value='Roboto'>Roboto</option>
+                            <option value='Roboto Condensed'>Roboto Condensed</option>
+                            <option value='Roboto Slab'>Roboto Slab</option>
+                            <option value='Sonsie One'>Sonsie One</option>
+                            <option value='Source Sans Pro'>Source Sans Pro</option>
+                            <option value='Syncopate'>Syncopate</option>
+                            <option value='Times New Roman'>Times New Roman</option>
+                            <option value='Trebuchet MS'>Trebuchet MS</option>
+                            <option value='Ubuntu'>Ubuntu</option>
+                            <option value='Verdana'>Verdana</option>
+                        </select>
+                    </div>
+                    <div id="font-size">
+                        <label for="fsize">Font size</label>
+                        <input type="number" list="fsize-list" value=11>
+                        <datalist id="fsize-list">
+                            <option value=8></option>
+                            <option value=9></option>
+                            <option value=10></option>
+                            <option value=11></option>
+                            <option value=12></option>
+                            <option value=14></option>
+                            <option value=16></option>
+                            <option value=18></option>
+                            <option value=24></option>
+                            <option value=30></option>
+                            <option value=36></option>
+                            <option value=42></option>
+                        </datalist>
+                    </div>
+                    <div id="text-decoration">
+                        <label>Style</label>
+                        <div id="text-decoration-items">
+                            <input type="checkbox" name="text-decoration-options" value="bold" id="text-bold">
+                            <label for="text-bold"><i class="material-icons">format_bold</i></label>
+                            <input type="checkbox" name="text-decoration-options" value="italic" id="text-italic">
+                            <label for="text-italic"><i class="material-icons">format_italic</i></label>
+                            <input type="checkbox" name="text-decoration-options" value="underlined" id="text-underlined">
+                            <label for="text-underlined"><i class="material-icons">format_underlined</i></label>
+
+                            <label for="text-color"><i class="material-icons">format_color_text</i></label>
+                            <input type="color" list="colors" id="text-color">
+                            <datalist id="colors">
+                                <option>#000000</option>
+                                <option>#ff0000</option>
+                                <option>#00ff00</option>
+                                <option>#0000ff</option>
+                                <option>#ffffff</option>
+                            </datalist>
+                        </div>
+                    </div>
+                    <div id="text-highlight">
+                        <label for="text-highlight-color">Text hightlight</label>
+                        <input type="color" list="colors">
+                    </div>
+                    <div id="text-all-capitals">
+                        <input type="checkbox" id="all-capitals">
+                        <label for="all-capitals">All capitals</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!--Configurações de parágrafo-->
+            <div class="editor-section">
+                <h2><span>Paragraph settings</span><i class="material-icons more">expand_more</i></h2>
+                <div class="section-options">
+                    <div id="paragraph-align">
+                        <label>Text align</label>
+                        <div id="paragraph-align-items">
+                            <input type="radio" name="paragraph-align-options" value="LEFT" id="align-left">
+                            <label for="align-left"><i class="material-icons">format_align_left</i></label>
+                            <input type="radio" name="paragraph-align-options" value="CENTER" id="align-center">
+                            <label for="align-center"><i class="material-icons">format_align_center</i></label>
+                            <input type="radio" name="paragraph-align-options" value="RIGHT" id="align-right">
+                            <label for="align-right"><i class="material-icons">format_align_right</i></label>
+                            <input type="radio" name="paragraph-align-options" value="JUSTIFY" id="align-justify">
+                            <label for="align-justify"><i class="material-icons">format_align_justify</i></label>
+                        </div>
+                    </div>
+                    <div id="paragraph-space-before">
+                        <label for="space-before">Space before</label>
+                        <input type="number" id="space-before" value=8><span>points</span>
+                    </div>
+                    <div id="paragraph-space-after">
+                        <label for="space-after">Space after</label>
+                        <input type="number" id="space-after" value=8><span>points</span>
+                    </div>
+                    <div id="paragraph-line-spacing">
+                        <label for="line-spacing">Line spacing</label>
+                        <input type="text" id="line-spacing" value="Simple" pattern="Simple|Double|[1-9]?[0-9]\.[0-9][0-9]?" list="line-spacing-options">
+                        <datalist id="line-spacing-options">
+                            <option value=1>Simple</option>
+                            <option>1.15</option>
+                            <option>1.5</option>
+                            <option value=2>Double</option>
+                        </datalist>
+                    </div>
+                </div>
+            </div>
+                
+            <!--Configuraṍes de Margens-->
+            <div class="editor-section">
+                <h2><span>Margins</span><i class="material-icons more">expand_more</i></h2>
+                <div class="section-options">
+                    <div id="margins-first-line-margin">
+                        <label for="first-line">First line</label>
+                        <input type="text" id="first-line">
+                        <span>pts</span>
+                    </div>
+                    
+                    <div id="margins-left-margin">
+                        <label for="left-margin">First line</label>
+                        <input type="text" id="left-margin">
+                        <span>pts</span>
+                    </div>
+                    
+                    <div id="margins-right-margin">
+                        <label for="right-margin">First line</label>
+                        <input type="text" id="right-margin">
+                        <span>pts</span>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <div class="bottom-bar">
+        </div>
+    </div>
+</body>
+</html>
