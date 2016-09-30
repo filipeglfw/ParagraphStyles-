@@ -23,12 +23,15 @@ html {
 	
 	display: flex;
 	flex-flow: column;
+	overflow: scroll;
 }
 
 #custom-container {
 	display: flex;
 	flex-flow: column;
 	flex: 1;
+	
+	min-height: min-content;
 }
 
 #bottom {
