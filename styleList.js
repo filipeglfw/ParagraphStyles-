@@ -29,15 +29,37 @@ function refreshHeadings() {
 }
 
 function applyStyle() {
-	acknowledge("Style applied");
+	showProgress();
+	setTimeout(function() {
+		acknowledge("Style applied");
+		hideProgress();
+	},2000)
 }
 
 function editStyle() {
-	acknowledge("Redirect to edit screen");
+	showProgress();
+	document.querySelector("#parent-container").innerHTML="";
+	hideProgress();
 }
 
-function deleteStyle() {
-	acknowledge("Style deleted");
+function deleteStyle(e) {
+	showProgress();
+	var styleName = e.target.parentElement.previousSibling.previousSibling.textContent;
+	var styleItem = e.target.parentElement.parentElement;
+	deleteStyleAnimation(styleItem).then(hideProgress());
+	acknowledge(styleName + " deleted");
+}
+
+function deleteStyleAnimation(styleItem) {
+	return new Promise(function(resolve,reject) {
+		styleItem.classList.add('deleting');
+		styleItem.style.position = 'relative';
+		styleItem.style.left = '105%';
+		styleItem.style["max-height"] = 0;
+		styleItem.style.margin = 0;
+		setTimeout(function() {styleItem.parentElement.removeChild(styleItem)},300);
+		resolve();
+	});
 }
 
 function newCustomStyle() {
@@ -94,28 +116,28 @@ function fillCustomStyles(customStyles) {
 
 function hideCustomSpinner() {
 	let spinner = document.querySelector('#custom-spinner-container');
-	spinner.className += " hidden";
+	spinner.classList.add("hidden");
 }
 
 function acknowledge(message) {
 	var snackbarMessage = document.querySelector('#snackbar-message');
 	snackbarMessage.textContent = message;
 	var snackbar = document.querySelector('#snackbar');
-	snackbar.className = snackbar.className.replace("snackbar-hidden","")
+	snackbar.classList.remove("snackbar-hidden");
 	setTimeout(function() {
 		snackbarMessage.textContent = "";
-		snackbar.className += " snackbar-hidden";
+		snackbar.classList.add("snackbar-hidden");
 	}, 2000)
 }
 
 function showProgress() {
 	var loader = document.querySelector('#loader-container');
-	loader.className = loader.className.replace("hidden","")
+	loader.classList.remove("hidden");
 }
 
 function hideProgress() {
 	var loader = document.querySelector('#loader-container');
-	loader.className += " hidden";
+	loader.classList.add("hidden");
 }
 
 

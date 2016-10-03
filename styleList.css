@@ -23,7 +23,9 @@ html {
 	
 	display: flex;
 	flex-flow: column;
-	overflow: scroll;
+	overflow: auto;
+	
+	transition: height 0.12s cubic-bezier(0.4, 0.0, 0.2, 1) 0.03s, padding-bottom 0.03s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 #custom-container {
@@ -50,6 +52,9 @@ html {
 .style-item {
     display: flex;
     margin: 0.8em 0;
+	
+	left: 0;
+	max-height:50px;
 }
 
 .style-item span {
@@ -58,6 +63,11 @@ html {
 	
 	color: #000;
 	opacity: 0.87;
+}
+
+.style-item.deleting {
+	-webkit-transition: max-height 0.15s cubic-bezier(0.4, 0.0, 0.2, 1) 0.15s, margin 0.15s cubic-bezier(0.4, 0.0, 0.2, 1) 0.15s, left 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition: max-height 0.15s cubic-bezier(0.4, 0.0, 0.2, 1) 0.15s, margin 0.15s cubic-bezier(0.4, 0.0, 0.2, 1) 0.15s, left 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 #heading-number-container {
