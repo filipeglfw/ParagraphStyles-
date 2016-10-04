@@ -104,10 +104,10 @@ function updateHeadingNumber(headingNumber) {
 }
 
 function fillCustomStyles(customStyles) {
-	let names = Object.keys(customStyles).sort();
+	var names = Object.keys(customStyles).sort();
 	var customStylesHTML = '';
 	names.forEach((styleName) => {
-		let customStyleElement  = '\
+		var customStyleElement  = '\
 			<div class="style-item"> \
 				<span>' + styleName + '</span> \
 				<div class="style-actions"> \
@@ -123,7 +123,7 @@ function fillCustomStyles(customStyles) {
 }
 
 function hideCustomSpinner() {
-	let spinner = document.querySelector('#custom-spinner-container');
+	var spinner = document.querySelector('#custom-spinner-container');
 	spinner.classList.add("hidden");
 }
 
