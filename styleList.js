@@ -38,8 +38,16 @@ function applyStyle() {
 
 function editStyle() {
 	showProgress();
-	document.querySelector("#parent-container").innerHTML="";
+	styleListFadeOut();
+	//document.querySelector("#parent-container").innerHTML="";
 	hideProgress();
+}
+
+function styleListFadeOut() {
+	var container = document.querySelector("#parent-container");
+	var bottomBar = document.querySelector("#bottom");
+	container.style.opacity = 0;
+	bottomBar.style.height = 0;
 }
 
 function deleteStyle(e) {
@@ -83,7 +91,7 @@ function fillUserStylesAndPreferences() {
 		headingNumber: "none",
 		customStyles: {
 			Custom: {},
-			"Citação 3":{},
+			"CitaÃ§Ã£o 3":{},
 		}
 	};
 	
