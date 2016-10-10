@@ -36,18 +36,25 @@ function applyStyle() {
 	},2000)
 }
 
-function editStyle() {
+function editStyle(e) {
 	showProgress();
-	styleListFadeOut();
-	//document.querySelector("#parent-container").innerHTML="";
-	hideProgress();
+	var styleName = e.target.parentElement.previousSibling.previousSibling.textContent;
+	var isCustom = e.target.parentElement.parentElement.dataset.custom;
+	styleListFadeOut().then(function() {
+	return document.querySelector("#parent-container").innerHTML="<div id='editor-container'>Hello World!</div>";})
+	.then(function(){return document.querySelector("#editor-container").style.opacity = 1})
+	.then(function() {hideProgress()});
 }
 
 function styleListFadeOut() {
-	var container = document.querySelector("#parent-container");
-	var bottomBar = document.querySelector("#bottom");
-	container.style.opacity = 0;
-	bottomBar.style.height = 0;
+	return new Promise(function(resolve,reject) {
+		var container = document.querySelector("#styles");
+		var bottomBar = document.querySelector("#bottom");
+		container.style.opacity = 0;
+		bottomBar.style.height = 0;
+		
+		container.addEventListener('transitionend',function(){resolve()});
+	})
 }
 
 function deleteStyle(e) {
@@ -108,7 +115,7 @@ function fillCustomStyles(customStyles) {
 	var customStylesHTML = '';
 	names.forEach((styleName) => {
 		var customStyleElement  = '\
-			<div class="style-item"> \
+			<div class="style-item" data-custom="true"> \
 				<span>' + styleName + '</span> \
 				<div class="style-actions"> \
 					<i class="material-icons apply-style">format_paint</i>\
@@ -146,6 +153,17 @@ function showProgress() {
 function hideProgress() {
 	var loader = document.querySelector('#loader-container');
 	loader.classList.add("hidden");
+}
+
+
+
+
+
+
+
+
+function loadEditor() {
+	
 }
 
 

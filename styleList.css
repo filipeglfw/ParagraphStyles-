@@ -19,13 +19,13 @@ html {
 }
 
 #styles {
-    padding: 0.5em 0.5em 56px 0.5em;
+    padding: 6px 6px 56px 6px;
 	
 	display: flex;
 	flex-flow: column;
 	overflow: auto;
 	
-	transition: height 0.12s cubic-bezier(0.4, 0.0, 0.2, 1) 0.03s, padding-bottom 0.03s cubic-bezier(0.4, 0.0, 0.2, 1);
+	transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 #custom-container {
@@ -42,11 +42,14 @@ html {
     bottom: 0;
     
     width: 100%;
+	overflow: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
     box-shadow: 0 -2px 8px #888;
 	background-color: #fff;
+	
+	transition: height 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .style-item {
@@ -66,8 +69,8 @@ html {
 }
 
 .style-item.deleting {
-	-webkit-transition: max-height 0.15s cubic-bezier(0.4, 0.0, 0.2, 1) 0.15s, margin 0.15s cubic-bezier(0.4, 0.0, 0.2, 1) 0.15s, left 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
-    transition: max-height 0.15s cubic-bezier(0.4, 0.0, 0.2, 1) 0.15s, margin 0.15s cubic-bezier(0.4, 0.0, 0.2, 1) 0.15s, left 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
+	-webkit-transition: max-height 0.15s cubic-bezier(0.4, 0.0, 0.2, 1) 0.18s, margin 0.15s cubic-bezier(0.4, 0.0, 0.2, 1) 0.15s, left 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition: max-height 0.15s cubic-bezier(0.4, 0.0, 0.2, 1) 0.18s, margin 0.15s cubic-bezier(0.4, 0.0, 0.2, 1) 0.15s, left 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 #heading-number-container {
