@@ -79,7 +79,7 @@ input + span {
 
 .material-icons.md-36 { font-size: 36px; }
 
-input[type=checkbox]:checked,input[type=checkbox]:checked + label i {
+input[type=checkbox]:checked,input[type=radio]:checked + label i {
 	background-color: #ddd;
 	box-shadow: inset 0 0 8px #aaa;
 }
